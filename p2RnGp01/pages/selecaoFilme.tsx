@@ -2,8 +2,9 @@ import { styles } from "./style";
 import InputComponente from "../components/input";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { View, Text, Image, TouchableOpacity, FlatList, Alert } from "react-native";
+import { View, Text, Image, TouchableOpacity, FlatList, Alert, ImageBackground } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import image from '../assets/image.png'
 
 interface filme{
     imdbID: string
@@ -45,29 +46,32 @@ export default function selecaoFilme() {
         }
     return(
         <View style={styles.containerPrincipal}>
-            <InputComponente
-                onChangeText={(titulo)=>{setTitulo(titulo)}}
-                value={titulo}
-                placeHolder="Digite aqui seu nome"
-                icone='search'
-                onSubmitEditing={()=>{getFilme(titulo)}}
-            />
-            <View>
-                <Text>{filme?.Title}</Text>
-                <Image
-                    source={{uri: filme?.Poster}}
-                    style={{ width: 200, height: 300 }}
-                    resizeMode="cover"
+            <ImageBackground source={image} style={styles.background}> 
+
+                <InputComponente
+                    onChangeText={(titulo)=>{setTitulo(titulo)}}
+                    value={titulo}
+                    placeHolder="Digite aqui seu nome"
+                    icone='search'
+                    onSubmitEditing={()=>{getFilme(titulo)}}
                 />
-                {filme&&
-                    <TouchableOpacity 
-                        onPress={handlePress}
-                        style={styles.buttonFavorito}
-                    >
-                        <Ionicons name={filme?.favorito ? 'star' : 'star-outline'} size={30} color={filme?.favorito ? 'gold' : 'gold'} />
-                    </TouchableOpacity>
-                }
-            </View>
+                <View>
+                    <Text>{filme?.Title}</Text>
+                    <Image
+                        source={{uri: filme?.Poster}}
+                        style={{ width: 200, height: 300 }}
+                        resizeMode="cover"
+                    />
+                    {filme&&
+                        <TouchableOpacity 
+                            onPress={handlePress}
+                            style={styles.buttonFavorito}
+                        >
+                            <Ionicons name={filme?.favorito ? 'star' : 'star-outline'} size={30} color={filme?.favorito ? 'gold' : 'gold'} />
+                        </TouchableOpacity>
+                    }
+                </View>
+            </ImageBackground>
         </View>
     )
 

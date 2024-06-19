@@ -5,9 +5,14 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     containerPrincipal:{
         flex: 1,
+        zIndex:0
+    },
+    background: {
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: 'gray'
+        flex: 1,
+        resizeMode: 'cover',
+        zIndex:2
     },
     registreSeButton:{
         paddingRight:100

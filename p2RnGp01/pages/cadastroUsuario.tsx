@@ -3,7 +3,9 @@ import InputComponente from "../components/input";
 import ButtonComponente from "../components/button";
 import axios from "axios";
 import { useState } from "react";
-import { Alert, View } from "react-native";
+import { Alert, ImageBackground, View } from "react-native";
+import image from '../assets/image.png'
+
 export default function cadastroUsuario({ navigation }) {
 
     const [nome, setNome] = useState('');
@@ -33,6 +35,7 @@ export default function cadastroUsuario({ navigation }) {
       };
     return(
         <View style={styles.containerPrincipal}>
+          <ImageBackground source={image} style={styles.background}>
             <InputComponente
               onChangeText={(nome: string)=>{setNome(nome)}}
               value={nome}
@@ -54,6 +57,7 @@ export default function cadastroUsuario({ navigation }) {
             <ButtonComponente 
               onPress={postUsuario}  
               texto="Cadastrar" />
+          </ImageBackground>
         </View>
     )
 

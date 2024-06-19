@@ -5,13 +5,13 @@ import HomeScreen from './pages/index';
 import cadastroUsuario from './pages/cadastroUsuario';
 import selecaoFilme from './pages/selecaoFilme';
 import { styles } from './pages/style';
-import { View } from 'react-native';
+import { ImageBackground, View } from 'react-native';
+import background from './assets/image.png'
 
 const Stack = createStackNavigator();
-
 function App() {
   return (
-    <>
+    // <ImageBackground source={background} style={styles.background}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
@@ -31,8 +31,8 @@ function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </>
-  );
+  // </ImageBackground>
+);
 }
 
 export default App;
