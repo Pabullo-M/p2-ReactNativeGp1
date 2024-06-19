@@ -14,6 +14,16 @@ type FilmesContextType = {
 
 const FilmesContext = createContext<FilmesContextType | undefined>(undefined);
 
+
+
+export const useFilmes = () => {
+    const context = useContext(FilmesContext);
+    if (!context) {
+        throw new Error('useFilmes must be used within a FilmesProvider');
+    }
+    return context;
+};
+
 export const FilmesProvider: React.FC = ({ children }) => {
     const [filmes, setFilmes] = useState<Filme[]>([]);
 
@@ -22,12 +32,4 @@ export const FilmesProvider: React.FC = ({ children }) => {
             {children}
         </FilmesContext.Provider>
     );
-};
-
-export const useFilmes = () => {
-    const context = useContext(FilmesContext);
-    if (!context) {
-        throw new Error('useFilmes must be used within a FilmesProvider');
-    }
-    return context;
 };

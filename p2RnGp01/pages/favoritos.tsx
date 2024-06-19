@@ -13,13 +13,13 @@ export default function Favoritos() {
             <FlatList
             data={filmes}
             renderItem={({ item }) => (
-                <View>
+                <>
                     <Text>{item.Title}</Text>
                     <Image 
                         source={{ uri: item.Poster}}
                         style={{ width: 270, height: 410, top: 70 }}
                     />
-                </View>
+                </>
             )}
             keyExtractor={item => item.imdbID}
             />

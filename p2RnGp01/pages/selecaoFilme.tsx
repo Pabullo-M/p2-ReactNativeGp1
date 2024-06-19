@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, TouchableOpacity, ImageBackground } from "react-native";
+import { View, Text, Image, TouchableOpacity, ImageBackground, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
 import { useFilmes } from "../hooks/globalContext";
@@ -15,15 +15,21 @@ interface Filme {
 }
 
 export default function SelecaoFilme() {
-  const { setFilmes } = useFilmes();
+  const {filmes, setFilmes } = useFilmes();
   const [filme, setFilme] = useState<Filme | null>(null);
   const [titulo, setTitulo] = useState('');
 
   useEffect(() => {
     if (filme && filme.favorito) {
-        setFilmes(prevFilmes=>[...prevFilmes, filme]);
+        const filmeExiste = filmes.find(item => item.imdbID === filme.imdbID);
+
+        if (filmeExiste) {
+            Alert.alert(`${filme.Title} já está nos favoritos`);
+        } else {
+            setFilmes(prevFilmes => [...prevFilmes, filme]);
+        }
     }
-  }, [filme?.favorito]);
+}, [filme?.favorito]);
 
   const getFilme = async (titulo: string) => {
     try {

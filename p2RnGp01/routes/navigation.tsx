@@ -6,14 +6,34 @@ import SelecaoFilme from '../pages/selecaoFilme';
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import CadastroUsuario from '../pages/cadastroUsuario';
+import HomeScreen from '../pages';
+import { FilmesProvider } from '../hooks/globalContext';
 
 const Stack = createStackNavigator();
 
 export function MyStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="cadastroUsuario" component={cadastroUsuario} />
-    </Stack.Navigator>
+    
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CadastroUsuario"
+            component={CadastroUsuario}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SelecaoFilme"
+            component={MyTabs}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 
