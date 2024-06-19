@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './pages/index';
-import cadastroUsuario from './pages/cadastroUsuario';
-import selecaoFilme from './pages/selecaoFilme';
+import CadastroUsuario from './pages/cadastroUsuario';
+import SelecaoFilme from './pages/selecaoFilme';
 import { styles } from './pages/style';
 import { ImageBackground, View } from 'react-native';
 import background from './assets/image.png'
@@ -17,17 +17,17 @@ function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Home' }}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="cadastroUsuario"
-            component={cadastroUsuario}
-            options={{ title: 'Cadastro de Usuário' }}
+            name="CadastroUsuario"
+            component={CadastroUsuario}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="selecaoFilme"
-            component={selecaoFilme}
-            options={{ title: 'Seleção de favoritos' }}
+            name="SelecaoFilme"
+            component={SelecaoFilme}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -14,12 +14,22 @@ export const styles = StyleSheet.create({
         resizeMode: 'cover',
         zIndex:2
     },
+    backgroundFavoritos: {
+        justifyContent: "flex-start",
+        alignItems: "center",
+        flex: 1,
+        resizeMode: 'cover',
+        zIndex:2
+    },
     registreSeButton:{
         paddingRight:100
     },
+    text:{
+        color: 'white',
+    },
     registreSeText:{
         top: 4.8,
-        color:'blue',
+        color:'orange',
     },
     olhoSenha:{
         position: 'absolute',
@@ -28,7 +38,10 @@ export const styles = StyleSheet.create({
     },
     buttonFavorito:{
         position:'absolute',
-        right : 5,
-        marginTop: 25
+        right : 15,
+        marginTop: 100
+    },
+    topBar:{
+        marginTop: 90
     }
 })

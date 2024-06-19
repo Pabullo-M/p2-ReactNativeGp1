@@ -13,7 +13,7 @@ interface filme{
     favorito: boolean
 }
 
-export default function selecaoFilme() {
+export default function SelecaoFilme() {
 
     const [filme, setFilme] = useState<filme>();
     const [titulo, setTitulo] = useState('');
@@ -46,12 +46,14 @@ export default function selecaoFilme() {
         }
     return(
         <View style={styles.containerPrincipal}>
-            <ImageBackground source={image} style={styles.background}> 
-
+            <ImageBackground source={image} style={styles.backgroundFavoritos}> 
+                <View style={styles.topBar}>
+                    <Text>Vai entrar a topBarNavigation</Text>
+                </View>
                 <InputComponente
                     onChangeText={(titulo)=>{setTitulo(titulo)}}
                     value={titulo}
-                    placeHolder="Digite aqui seu nome"
+                    placeHolder="Digite sua busca de Filme/Serie"
                     icone='search'
                     onSubmitEditing={()=>{getFilme(titulo)}}
                 />
@@ -59,15 +61,14 @@ export default function selecaoFilme() {
                     <Text>{filme?.Title}</Text>
                     <Image
                         source={{uri: filme?.Poster}}
-                        style={{ width: 200, height: 300 }}
-                        resizeMode="cover"
+                        style={{ width: 270, height: 410, top: 70 }}
                     />
                     {filme&&
                         <TouchableOpacity 
                             onPress={handlePress}
                             style={styles.buttonFavorito}
                         >
-                            <Ionicons name={filme?.favorito ? 'star' : 'star-outline'} size={30} color={filme?.favorito ? 'gold' : 'gold'} />
+                            <Ionicons name={filme?.favorito ? 'star-sharp' : 'star-outline'} size={45} color={filme?.favorito ? 'gold' : 'gold'} />
                         </TouchableOpacity>
                     }
                 </View>

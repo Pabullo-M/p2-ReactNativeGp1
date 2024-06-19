@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }) {
 
       if (response.status === 200) {
         Alert.alert('Usuário Logado');
-        navigation.navigate('selecaoFilme')
+        navigation.navigate('SelecaoFilme')
         
       }
     } catch (error) {
@@ -54,11 +54,11 @@ export default function HomeScreen({ navigation }) {
         onPress={postUsuarios}
         texto="Login"
       />
-      <Text style={styles.registreSeText}>
+      <Text style={styles.text}>
         Não tem uma conta?
         <TouchableOpacity
           style={styles.registreSeButton}
-          onPress={() => navigation.navigate('cadastroUsuario')}
+          onPress={() => navigation.navigate('CadastroUsuario')}
         >
           <Text style={styles.registreSeText}> Registre-se</Text>
         </TouchableOpacity>
