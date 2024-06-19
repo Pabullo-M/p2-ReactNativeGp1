@@ -37,19 +37,17 @@ export default function SelecaoFilme() {
             if (!prevFilme) {
             return prevFilme;
             }
+
             return (
                 {
                 ...prevFilme,
                 favorito: !prevFilme.favorito
                 }
         )});
-        }
+    }
     return(
         <View style={styles.containerPrincipal}>
             <ImageBackground source={image} style={styles.backgroundFavoritos}> 
-                <View style={styles.topBar}>
-                    <Text>Vai entrar a topBarNavigation</Text>
-                </View>
                 <InputComponente
                     onChangeText={(titulo)=>{setTitulo(titulo)}}
                     value={titulo}
@@ -68,7 +66,7 @@ export default function SelecaoFilme() {
                             onPress={handlePress}
                             style={styles.buttonFavorito}
                         >
-                            <Ionicons name={filme?.favorito ? 'star-sharp' : 'star-outline'} size={45} color={filme?.favorito ? 'gold' : 'gold'} />
+                            <Ionicons name={filme?.favorito ? 'heart' : 'heart-outline'} size={45} color='red' />
                         </TouchableOpacity>
                     }
                 </View>
