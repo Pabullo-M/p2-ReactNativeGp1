@@ -14,10 +14,10 @@ export default function Favoritos() {
             data={filmes}
             renderItem={({ item }) => (
                 <>
-                    <Text>{item.Title}</Text>
+                    <Text style= {styles.tituloFilme}>{item.Title}</Text>
                     <Image 
                         source={{ uri: item.Poster}}
-                        style={{ width: 270, height: 410, top: 70 }}
+                        style={styles.bordaFilmes}
                     />
                 </>
             )}
