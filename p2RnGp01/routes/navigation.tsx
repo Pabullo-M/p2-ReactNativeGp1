@@ -52,8 +52,8 @@ export function MyTabs() {
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
             tabBarIndicatorStyle: { backgroundColor: 'blue' },
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="movie" color={color} size={size} />
+            tabBarIcon: ({ color}) => (
+              <MaterialCommunityIcons name="movie" color={color} size={26} />
             ),
           }}
         />
@@ -67,8 +67,8 @@ export function MyTabs() {
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
             tabBarIndicatorStyle: { backgroundColor: 'blue' },
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="heart" color={color} size={size} />
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="heart" color={color} size={26} />
             ),
           }}
         />
