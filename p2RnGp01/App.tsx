@@ -3,10 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './pages/index';
 import CadastroUsuario from './pages/cadastroUsuario';
-import SelecaoFilme from './pages/selecaoFilme';
-import { styles } from './pages/style';
-import { ImageBackground, View } from 'react-native';
-import background from './assets/image.png'
 import { MyTabs } from './routes/navigation';
 import { FilmesProvider } from './hooks/globalContext';
 
