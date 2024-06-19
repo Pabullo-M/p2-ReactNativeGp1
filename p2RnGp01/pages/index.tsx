@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import image from '../assets/image.png'
 
+
 export default function HomeScreen({ navigation }) {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
@@ -34,23 +35,29 @@ export default function HomeScreen({ navigation }) {
     
   <View style={styles.containerPrincipal}>
     <ImageBackground source={image} style={styles.background}>
+      
+     <View style={styles.bordaOpaca}>
       <InputComponente
+        style={styles.barraLogin}
         onChangeText={(login) => setLogin(login)}
         value={login}
         placeHolder="Digite aqui seu e-mail"
         icone='person'
       />
       <InputComponente
+        style={styles.barraLogin}
         onChangeText={(senha) => setSenha(senha)}
         value={senha}
         placeHolder="Digite aqui sua senha"
         icone="lock-closed"
         secureTextEntry={senhaInvisivel}
       />
+      
       <TouchableOpacity style={styles.olhoSenha} onPress={() => setSenhaInvisivel(!senhaInvisivel)}>
         <Ionicons size={25} name={senhaInvisivel ? 'eye-off' : 'eye'} />
       </TouchableOpacity>
       <ButtonComponente
+        style={styles.botaoLogin}
         onPress={postUsuarios}
         texto="Login"
       />
@@ -63,6 +70,7 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.registreSeText}> Registre-se</Text>
         </TouchableOpacity>
       </Text>
+      </View>
       </ImageBackground>
    </View>
   

@@ -58,17 +58,17 @@ export default function SelecaoFilme() {
                     onSubmitEditing={()=>{getFilme(titulo)}}
                 />
                 <View>
-                    <Text>{filme?.Title}</Text>
+                    <Text style={styles.tituloFilme}>{filme?.Title}</Text>
                     <Image
                         source={{uri: filme?.Poster}}
-                        style={{ width: 270, height: 410, top: 70 }}
+                        style={styles.bordaFilmes}
                     />
                     {filme&&
                         <TouchableOpacity 
                             onPress={handlePress}
                             style={styles.buttonFavorito}
                         >
-                            <Ionicons name={filme?.favorito ? 'star-sharp' : 'star-outline'} size={45} color={filme?.favorito ? 'gold' : 'gold'} />
+                            <Ionicons name={filme?.favorito ? 'heart' : 'heart-outline'} size={50} color={filme?.favorito ? 'red' : 'red'} />
                         </TouchableOpacity>
                     }
                 </View>
