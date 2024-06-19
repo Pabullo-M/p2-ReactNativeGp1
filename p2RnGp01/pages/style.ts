@@ -41,7 +41,4 @@ export const styles = StyleSheet.create({
         right : 15,
         marginTop: 100
     },
-    topBar:{
-        marginTop: 90
-    }
 })

@@ -7,11 +7,13 @@ import SelecaoFilme from './pages/selecaoFilme';
 import { styles } from './pages/style';
 import { ImageBackground, View } from 'react-native';
 import background from './assets/image.png'
+import { MyTabs } from './routes/navigation';
+import { FilmesProvider } from './hooks/globalContext';
 
 const Stack = createStackNavigator();
 function App() {
   return (
-    // <ImageBackground source={background} style={styles.background}>
+    <FilmesProvider>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
@@ -26,12 +28,12 @@ function App() {
           />
           <Stack.Screen
             name="SelecaoFilme"
-            component={SelecaoFilme}
+            component={MyTabs}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>
-  // </ImageBackground>
+  </FilmesProvider>
 );
 }
 
