@@ -43,30 +43,47 @@ export default function SelecaoFilme() {
     }
   };
 
-  return (
-    <View style={styles.containerPrincipal}>
-      <ImageBackground source={image} style={styles.backgroundFavoritos}>
-        <InputComponente
-          onChangeText={(titulo) => { setTitulo(titulo) }}
-          value={titulo}
-          placeHolder="Digite sua busca de Filme/Serie"
-          icone='search'
-          onSubmitEditing={() => { getFilme(titulo) }}
-        />
-        <View>
-          <Text>{filme?.Title}</Text>
-          <Image
-            source={{ uri: filme?.Poster }}
-            style={{ width: 270, height: 410, top: 70 }}
-          />
-          {filme &&
-            <TouchableOpacity
-              onPress={handlePress}
-              style={styles.buttonFavorito}
-            >
-              <Ionicons name={filme?.favorito ? 'heart' : 'heart-outline'} size={45} color='red' />
-            </TouchableOpacity>
-          }
+    const handlePress = () => {
+        setFilme(prevFilme => {
+            if (!prevFilme) {
+            return prevFilme;
+            }
+            return (
+                {
+                ...prevFilme,
+                favorito: !prevFilme.favorito
+                }
+        )});
+        }
+    return(
+        <View style={styles.containerPrincipal}>
+            <ImageBackground source={image} style={styles.backgroundFavoritos}> 
+                <View style={styles.topBar}>
+                    <Text>Vai entrar a topBarNavigation</Text>
+                </View>
+                <InputComponente
+                    onChangeText={(titulo)=>{setTitulo(titulo)}}
+                    value={titulo}
+                    placeHolder="Digite sua busca de Filme/Serie"
+                    icone='search'
+                    onSubmitEditing={()=>{getFilme(titulo)}}
+                />
+                <View>
+                    <Text style={styles.tituloFilme}>{filme?.Title}</Text>
+                    <Image
+                        source={{uri: filme?.Poster}}
+                        style={styles.bordaFilmes}
+                    />
+                    {filme&&
+                        <TouchableOpacity 
+                            onPress={handlePress}
+                            style={styles.buttonFavorito}
+                        >
+                            <Ionicons name={filme?.favorito ? 'heart' : 'heart-outline'} size={50} color={filme?.favorito ? 'red' : 'red'} />
+                        </TouchableOpacity>
+                    }
+                </View>
+            </ImageBackground>
         </View>
       </ImageBackground>
     </View>

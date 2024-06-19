@@ -8,7 +8,7 @@ import buttonComponente from "./button";
     },
     input: {
         height: 60,
-        borderColor: 'black',
+        borderColor: '#FFFFFF90',
         borderWidth: 1,
         paddingHorizontal: 10,
         marginBottom: 10,
@@ -20,10 +20,9 @@ import buttonComponente from "./button";
         position: 'absolute',
         paddingTop:'5%',
         width: 30 ,
-        height: 60,
-        left: 8,
-        borderRightColor: 'black',
-        borderRightWidth:1,
+        height: 45,
+        left: 10,       
+       
     },
     buttonComponente: {
         backgroundColor: "#3498db",
