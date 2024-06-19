@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Alert, ImageBackground, View } from "react-native";
 import image from '../assets/image.png'
 
-export default function cadastroUsuario({ navigation }) {
+export default function CadastroUsuario({ navigation }) {
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
