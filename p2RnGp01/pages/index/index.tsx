@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import InputComponente from '../../components/input';
 import ButtonComponente from '../../components/button';
 import { styles } from '../../pages/index/styles';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import image from '../../assets/image.png'
 import { useUser } from '../../hooks/userContext';
+import CheckBox from '../../components/checkBox';
 
 
 export default function HomeScreen({ navigation }) {
@@ -33,7 +34,7 @@ export default function HomeScreen({ navigation }) {
           email: login,
           password: senha
         })
-        navigation.navigate('SelecaoFilme')
+        navigation.navigate('HomePage')
         
       }
     } catch (error) {
@@ -63,7 +64,7 @@ export default function HomeScreen({ navigation }) {
         icone="lock-closed"
         secureTextEntry={senhaInvisivel}
       />
-      
+       <CheckBox />
       <TouchableOpacity style={styles.olhoSenha} onPress={() => setSenhaInvisivel(!senhaInvisivel)}>
         <Ionicons size={25} name={senhaInvisivel ? 'eye-off' : 'eye'} />
       </TouchableOpacity>
