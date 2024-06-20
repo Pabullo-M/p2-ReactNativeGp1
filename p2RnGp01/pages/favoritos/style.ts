@@ -7,29 +7,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         zIndex:0
     },
-    barraLogin:{
-        width: 250,
-        height: 50,
-        backgroundColor: '#fff',
-        borderWidth: 2,
-        borderRadius: 10,        
-        margin: 5,
-        textAlign: 'center',
-                
-    },
-    botaoLogin: {
-        borderWidth: 5,
-        borderColor: '#FFFFFF60',
-        borderRadius: 7,
-        backgroundColor: '#6290b3',
-        width: 120,
-        height: 50,
-        alignItems: 'center',
-        alignSelf: 'center',
-        marginTop: 18,
-        padding: 7,
-   
-    },
     background: {
         justifyContent: "center",
         alignItems: "center",
@@ -44,21 +21,9 @@ export const styles = StyleSheet.create({
         resizeMode: 'cover',
         zIndex:2
     },
-    registreSeButton:{
-        paddingRight:100
-    },
     text:{
         paddingTop: '10%',
         color: 'white',
-    },
-    registreSeText:{
-        top: 4.8,
-        color:'orange',
-    },
-    olhoSenha:{
-        position: 'absolute',
-        right:'17%',
-        paddingBottom:'26%'
     },
     buttonFavorito:{
         position: 'absolute',
@@ -81,43 +46,91 @@ export const styles = StyleSheet.create({
         
     },
     bordaFilmes:{
-        backgroundColor: '#FFFFFF10',
-        padding: 40, 
-        borderRadius:20,
+        backgroundColor: '#FFFFFF10',        
+        borderRadius:5,
         borderColor:"#fff",
-        borderWidth:2,
+        borderWidth:1,
         opacity: 20,
-        width: 270, 
-        height: 410, 
-        top: 20,
+        width: 150, 
+        height: 230,
+        alignSelf: 'flex-end',
+        
+        
     }, 
     tituloFilme: {
+        flex: 1,
         color: '#fff',
-        textAlign: 'center',
+        textAlign: 'center',       
+        //position: 'absolute',
         borderWidth: 2,
         borderColor: '#fff',
-        borderRadius: 10,
-        marginTop: 20,
+        borderRadius: 6,        
         padding: 12,
-        fontSize: 22,       
-        width: 250,
-        alignSelf: 'center',
+        fontSize: 18,
+        fontWeight: '700',       
+        width: 210,
+        margin: 2.5,        
         opacity: 20,
-        backgroundColor: '#00000050',
+        top: 0,
+        backgroundColor: '#00000090',
     },
-
-   botaoRemover: {
+    botaoRemover: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#FF6347',
-        padding: 10,
-        borderRadius: 5,
+        alignSelf: 'flex-end',
+        justifyContent: 'center',        
+        backgroundColor: '#FF6347',        
+        borderRadius: 7,
+        width: 150, 
+        height: 58,
+      
     },
     textoBotaoRemover: {
         color: '#fff',
         fontSize: 16,
         marginLeft: 5,
     },
+    cardFavoritos: {
+        zIndex: 2,
+        alignContent: 'flex-end',
+        justifyContent: 'flex-end',
+        borderWidth: 1,
+        borderRadius: 5,
+        borderColor:"#fff",
+        backgroundColor: '#FFFFFF95',
+        width: 370,
+        height: 290,
+        margin: 10,
+    },
+    descricao: {
+        color: 'black',    
+        fontSize: 15.7,
+        fontWeight: '800',
+        width: 205,    
+        left: 7                
+    },
+    nota: {
+        color: '#ffd700',
+        textAlign: 'center',
+        justifyContent: 'space-between',
+        alignContent: 'space-between',
+        position: 'absolute',
+        backgroundColor: '#00000095',        
+        borderWidth: 1.5,
+        borderColor: '#ffd700',        
+        borderRadius: 6,        
+        padding: 6,
+        fontSize: 22,
+        fontWeight: '900',
+        width: 70,
+        height: 40,
+        left: 70,     
+        top: 245,        
+    },
+    containerDescricao: {
+        position: 'absolute',        
+        top: 0,   
+    }
+   
     
 })

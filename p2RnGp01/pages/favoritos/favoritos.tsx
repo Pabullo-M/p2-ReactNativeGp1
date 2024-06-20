@@ -38,11 +38,21 @@ export default function Favoritos() {
             {!filmes.find((filme)=>filme.userEmail == user?.email)?<Text>
                 Lista de Favoritos Vazia
                 </Text>:
+                    
                     <FlatList
                     data={filmes.filter((filme)=>filme.userEmail == user?.email)}
                     renderItem={({ item }) => (
-                        <>
-                            <Text style= {styles.tituloFilme}>{item.Title}</Text>
+                        <> 
+                        <View style={styles.cardFavoritos}>
+                            <View style={styles.containerDescricao}>
+                                <Text style= {styles.tituloFilme}>{item.Title}</Text>                       
+                                <Text style={styles.descricao}>{item.Plot}</Text>
+                            </View>
+                            
+                            <Text style={styles.nota}>{item.imdbRating}
+                            <Ionicons name="star" size={19} color='gold'/>
+                            </Text>
+                            
                             <Image 
                                 source={{ uri: item.Poster}}
                                 style={styles.bordaFilmes}
@@ -54,10 +64,13 @@ export default function Favoritos() {
                                 <Ionicons name="heart-dislike" size={20} color="#fff" />
                                 <Text style={styles.textoBotaoRemover}> Remover dos Favoritos</Text>
                             </TouchableOpacity>
+                        </View>
                         </>
+                        
                     )}
                     keyExtractor={item => item.imdbID}
                     />
+               
             }
         </ImageBackground>
         </View>

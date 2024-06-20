@@ -4,6 +4,8 @@ export type Filme = {
     imdbID: string;
     Title: string;
     Poster: string;
+    Plot: string;
+    imdbRating: string;
     favorito: boolean;
     userEmail:string;
 };
