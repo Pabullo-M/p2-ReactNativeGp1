@@ -2,8 +2,10 @@ import { Alert, FlatList, Image, ImageBackground, Text, View } from "react-nativ
 import { Filme, useFilmes } from "../hooks/globalContext";
 import { styles } from "./style";
 import image from '../assets/image.png'
+import { useUser } from "../hooks/userContext";
 
 export default function Favoritos() {
+    const {user}=useUser();
     const { filmes} = useFilmes();
 
     return(
@@ -11,7 +13,7 @@ export default function Favoritos() {
           <ImageBackground source={image} style={styles.background}>
         
             <FlatList
-            data={filmes}
+            data={filmes.filter((filme)=>filme.userEmail == user?.email)}
             renderItem={({ item }) => (
                 <>
                     <Text style= {styles.tituloFilme}>{item.Title}</Text>

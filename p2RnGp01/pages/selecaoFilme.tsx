@@ -6,15 +6,18 @@ import { useFilmes } from "../hooks/globalContext";
 import InputComponente from "../components/input";
 import { styles } from "./style";
 import image from '../assets/image.png';
+import { useUser } from "../hooks/userContext";
 
 interface Filme {
   imdbID: string;
   Title: string;
   Poster: string;
   favorito: boolean;
+  userEmail: string;
 }
 
 export default function SelecaoFilme() {
+  const {user} = useUser();
   const {filmes, setFilmes } = useFilmes();
   const [filme, setFilme] = useState<Filme | null>(null);
   const [titulo, setTitulo] = useState('');
@@ -41,26 +44,15 @@ export default function SelecaoFilme() {
   };
 
   const handlePress = () => {
-    if (filme) {
+    if (filme&&user) {
       setFilme(prevFilme => ({
         ...prevFilme!,
-        favorito: !prevFilme?.favorito
+        favorito: !prevFilme?.favorito,
+        userEmail: user?.email
       }));
     }
   };
 
-    // const handlePress = () => {
-    //     setFilme(prevFilme => {
-    //         if (!prevFilme) {
-    //         return prevFilme;
-    //         }
-    //         return (
-    //             {
-    //             ...prevFilme,
-    //             favorito: !prevFilme.favorito
-    //             }
-    //     )});
-    //     }
     return(
         <View style={styles.containerPrincipal}>
             <ImageBackground source={image} style={styles.backgroundFavoritos}> 
