@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import CadastroUsuario from '../pages/cadastroUsuario/cadastroUsuario';
 import HomeScreen from '../pages/index';
 import { FilmesProvider } from '../hooks/globalContext';
+import HomePage from '../pages/homePage/homePage';
 
 const Stack = createStackNavigator();
 
@@ -27,7 +28,7 @@ export function MyStack() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="SelecaoFilme"
+            name="HomePage"
             component={MyTabs}
             options={{ headerShown: false }}
           />
@@ -42,12 +43,27 @@ export function MyTabs() {
   return (
       <Tab.Navigator style={{marginTop: 25}}>
         <Tab.Screen
+          name="HomePage"
+          component={HomePage}
+          options={{
+            tabBarLabel: 'Pagina Principal',
+            tabBarStyle: { backgroundColor: 'white' },
+            tabBarLabelStyle: { fontSize:  10},
+            tabBarActiveTintColor: 'blue',
+            tabBarInactiveTintColor: 'gray',
+            tabBarIndicatorStyle: { backgroundColor: 'blue' },
+            tabBarIcon: ({ color}) => (
+              <MaterialCommunityIcons name="popcorn"color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
           name="SelecaoFilme"
           component={SelecaoFilme}
           options={{
             tabBarLabel: 'Seleção de Filmes',
             tabBarStyle: { backgroundColor: 'white' },
-            tabBarLabelStyle: { fontSize: 16 },
+            tabBarLabelStyle: { fontSize: 10 },
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
             tabBarIndicatorStyle: { backgroundColor: 'blue' },
@@ -62,7 +78,7 @@ export function MyTabs() {
           options={{
             tabBarLabel: 'Favoritos',
             tabBarStyle: { backgroundColor: 'white' },
-            tabBarLabelStyle: { fontSize: 16 },
+            tabBarLabelStyle: { fontSize: 10 },
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
             tabBarIndicatorStyle: { backgroundColor: 'blue' },

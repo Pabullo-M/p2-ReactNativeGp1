@@ -21,7 +21,8 @@
     "react-native": "0.74.2",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-pager-view": "^6.3.3",
-    "react-native-vector-icons": "^10.1.0"
+    "react-native-vector-icons": "^10.1.0",
+    "expo-av": "~14.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
