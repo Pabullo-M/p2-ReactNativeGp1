@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Alert, FlatList, Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import { Filme, useFilmes } from "../../hooks/globalContext";
@@ -12,7 +11,7 @@ export default function Favoritos() {
     const { filmes, removerFilmeFavorito } = useFilmes();
 
 
-    const handleRemoverPress = (filme) => {
+    const handleRemoverPress = (filme:Filme) => {
         Alert.alert(
             "Remover dos Favoritos",
             `Deseja remover ${filme.Title} dos favoritos?`,
