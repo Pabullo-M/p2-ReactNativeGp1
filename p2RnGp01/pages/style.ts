@@ -104,6 +104,20 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
         opacity: 20,
         backgroundColor: '#00000050',
-    }
+    },
 
+   botaoRemover: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FF6347',
+        padding: 10,
+        borderRadius: 5,
+    },
+    textoBotaoRemover: {
+        color: '#fff',
+        fontSize: 16,
+        marginLeft: 5,
+    },
+    
 })
