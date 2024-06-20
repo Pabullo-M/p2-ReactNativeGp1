@@ -63,21 +63,24 @@ export default function SelecaoFilme() {
                     icone='search'
                     onSubmitEditing={()=>{getFilme(titulo)}}
                 />
-                <View>
-                    <Text style={styles.tituloFilme}>{filme?.Title}</Text>
-                    <Image
-                        source={{uri: filme?.Poster}}
-                        style={styles.bordaFilmes}
-                    />
-                    {filme&&
-                        <TouchableOpacity 
-                            onPress={handlePress}
-                            style={styles.buttonFavorito}
-                        >
-                            <Ionicons name={filme?.favorito ? 'heart' : 'heart-outline'} size={50} color={filme?.favorito ? 'red' : 'red'} />
-                        </TouchableOpacity>
-                    }
-                </View>
+                {filme?.Title == undefined? 
+                      <Text>Nenhum Filme Selecionado</Text>:
+                  <View>
+                      <Text style={styles.tituloFilme}>{filme?.Title}</Text>
+                      <Image
+                          source={{uri: filme?.Poster}}
+                          style={styles.bordaFilmes}
+                      />
+                      {filme&&
+                          <TouchableOpacity 
+                              onPress={handlePress}
+                              style={styles.buttonFavorito}
+                          >
+                              <Ionicons name={filme?.favorito ? 'heart' : 'heart-outline'} size={50} color={filme?.favorito ? 'red' : 'red'} />
+                          </TouchableOpacity>
+                      }
+                  </View>
+                }
             </ImageBackground>
         </View>
   );

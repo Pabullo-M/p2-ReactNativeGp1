@@ -11,20 +11,23 @@ export default function Favoritos() {
     return(
         <View style={styles.containerPrincipal}>
           <ImageBackground source={image} style={styles.background}>
-        
-            <FlatList
-            data={filmes.filter((filme)=>filme.userEmail == user?.email)}
-            renderItem={({ item }) => (
-                <>
-                    <Text style= {styles.tituloFilme}>{item.Title}</Text>
-                    <Image 
-                        source={{ uri: item.Poster}}
-                        style={styles.bordaFilmes}
+            {!filmes.find((filme)=>filme.userEmail == user?.email)?<Text>
+                Lista de Favoritos Vazia
+                </Text>:
+                    <FlatList
+                    data={filmes.filter((filme)=>filme.userEmail == user?.email)}
+                    renderItem={({ item }) => (
+                        <>
+                            <Text style= {styles.tituloFilme}>{item.Title}</Text>
+                            <Image 
+                                source={{ uri: item.Poster}}
+                                style={styles.bordaFilmes}
+                            />
+                        </>
+                    )}
+                    keyExtractor={item => item.imdbID}
                     />
-                </>
-            )}
-            keyExtractor={item => item.imdbID}
-            />
+            }
         </ImageBackground>
         </View>
     )
