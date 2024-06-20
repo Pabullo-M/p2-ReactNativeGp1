@@ -5,9 +5,14 @@ import { useFilmes } from "../hooks/globalContext";
 import { styles } from "./style";
 import image from '../assets/image.png';
 import { Ionicons } from "@expo/vector-icons";
+import image from '../assets/image.png'
+import { useUser } from "../hooks/userContext";
 
 export default function Favoritos() {
+    const {user}=useUser();
+    const { filmes} = useFilmes();
     const { filmes, removerFilmeFavorito } = useFilmes();
+
 
     const handleRemoverPress = (filme) => {
         Alert.alert(
@@ -32,14 +37,17 @@ export default function Favoritos() {
 
     return (
         <View style={styles.containerPrincipal}>
-            <ImageBackground source={image} style={styles.background}>
-                <FlatList
-                    data={filmes}
+          <ImageBackground source={image} style={styles.background}>
+            {!filmes.find((filme)=>filme.userEmail == user?.email)?<Text>
+                Lista de Favoritos Vazia
+                </Text>:
+                    <FlatList
+                    data={filmes.filter((filme)=>filme.userEmail == user?.email)}
                     renderItem={({ item }) => (
-                        <View style={styles.itemContainer}>
-                            <Text style={styles.tituloFilme}>{item.Title}</Text>
-                            <Image
-                                source={{ uri: item.Poster }}
+                        <>
+                            <Text style= {styles.tituloFilme}>{item.Title}</Text>
+                            <Image 
+                                source={{ uri: item.Poster}}
                                 style={styles.bordaFilmes}
                             />
                             <TouchableOpacity
@@ -49,11 +57,12 @@ export default function Favoritos() {
                                 <Ionicons name="heart-dislike" size={20} color="#fff" />
                                 <Text style={styles.textoBotaoRemover}> Remover dos Favoritos</Text>
                             </TouchableOpacity>
-                        </View>
+                        </>
                     )}
                     keyExtractor={item => item.imdbID}
-                />
-            </ImageBackground>
+                    />
+            }
+        </ImageBackground>
         </View>
     );
 }
