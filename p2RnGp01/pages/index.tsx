@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import InputComponente from '../components/input';
 import ButtonComponente from '../components/button';
@@ -6,12 +6,20 @@ import { styles } from './style';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import image from '../assets/image.png'
+import { useFilmes } from '../hooks/filmesContext';
+import { useUser } from '../hooks/userContext';
 
 
 export default function HomeScreen({ navigation }) {
+ 
+  const {setUser} = useUser()
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
   const [senhaInvisivel, setSenhaInvisivel] = useState(true);
+
+  useEffect(()=>{
+    setUser(undefined);
+  },[])
 
   const postUsuarios = async () => {
     try {
@@ -22,6 +30,10 @@ export default function HomeScreen({ navigation }) {
 
       if (response.status === 200) {
         Alert.alert('Usuário Logado');
+        setUser({
+          email: login,
+          password: senha
+        })
         navigation.navigate('SelecaoFilme')
         
       }
