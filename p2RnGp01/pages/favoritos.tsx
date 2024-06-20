@@ -1,16 +1,13 @@
 import React from "react";
 import { Alert, FlatList, Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome'; 
 import { useFilmes } from "../hooks/globalContext";
 import { styles } from "./style";
-import image from '../assets/image.png';
 import { Ionicons } from "@expo/vector-icons";
 import image from '../assets/image.png'
 import { useUser } from "../hooks/userContext";
 
 export default function Favoritos() {
     const {user}=useUser();
-    const { filmes} = useFilmes();
     const { filmes, removerFilmeFavorito } = useFilmes();
 
 
