@@ -37,6 +37,19 @@ import buttonComponente from "./button";
         fontSize: 16,
         fontWeight: "bold",
     },
-
+    
+    botaoRemover: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FF6347',
+        padding: 10,
+        borderRadius: 5,
+    },
+    textoBotaoRemover: {
+        color: '#fff',
+        fontSize: 16,
+        marginLeft: 5,
+    },
 
 })
