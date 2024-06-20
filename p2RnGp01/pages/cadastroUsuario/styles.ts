@@ -1,11 +1,21 @@
 import { StyleSheet } from "react-native";
 
-
- export const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     containerInput:{
         // position: 'absolute',
         width: '80%'
-    },
+    },    
+    containerPrincipal:{
+        flex: 1,
+        zIndex:0
+    },    
+    background: {
+        justifyContent: "center",
+        alignItems: "center",
+        flex: 1,
+        resizeMode: 'cover',
+        zIndex:2
+    }, 
     input: {
         height: 60,
         borderColor: '#FFFFFF90',
@@ -36,8 +46,6 @@ import { StyleSheet } from "react-native";
         color: "#fff",
         fontSize: 16,
         fontWeight: "bold",
-    },
-    
-
+    }
 
 })

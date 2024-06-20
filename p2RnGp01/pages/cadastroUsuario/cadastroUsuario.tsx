@@ -1,10 +1,10 @@
-import { styles } from "./style";
-import InputComponente from "../components/input";
-import ButtonComponente from "../components/button";
+import { styles } from "./styles";
+import InputComponente from "../../components/input";
+import ButtonComponente from "../../components/button";
 import axios from "axios";
 import { useState } from "react";
 import { Alert, ImageBackground, View } from "react-native";
-import image from '../assets/image.png'
+import image from './../../assets/image.png'
 
 export default function CadastroUsuario({ navigation }) {
 

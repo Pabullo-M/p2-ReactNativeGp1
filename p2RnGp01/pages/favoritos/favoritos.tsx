@@ -1,7 +1,7 @@
 import { Alert, FlatList, Image, ImageBackground, Text, View } from "react-native";
-import { Filme, useFilmes } from "../hooks/globalContext";
-import { styles } from "./style";
-import image from '../assets/image.png'
+import { Filme, useFilmes } from "../../hooks/globalContext";
+import { styles } from ".././favoritos/style";
+import image from '../../assets/image.png'
 
 export default function Favoritos() {
     const { filmes} = useFilmes();

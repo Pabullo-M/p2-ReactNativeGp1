@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Image, TouchableOpacity, ImageBackground, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
-import { useFilmes } from "../hooks/globalContext";
-import InputComponente from "../components/input";
-import { styles } from "./style";
-import image from '../assets/image.png';
+import { useFilmes } from "../../hooks/globalContext";
+import InputComponente from "../../components/input";
+import { styles } from "../selecaoFilme/style";
+import image from '../../assets/image.png';
 
 interface Filme {
   imdbID: string;

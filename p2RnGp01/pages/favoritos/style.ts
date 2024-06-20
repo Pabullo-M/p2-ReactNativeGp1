@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10,        
         margin: 5,
         textAlign: 'center',
-        
+                
     },
     botaoLogin: {
         borderWidth: 5,

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Alert, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
-import InputComponente from '../components/input';
-import ButtonComponente from '../components/button';
-import { styles } from './style';
+import InputComponente from '../../components/input';
+import ButtonComponente from '../../components/button';
+import { styles } from '../../pages/index/styles';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
-import image from '../assets/image.png'
+import image from '../../assets/image.png'
 
 
 export default function HomeScreen({ navigation }) {
