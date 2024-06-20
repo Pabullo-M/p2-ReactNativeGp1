@@ -1,17 +1,18 @@
+
 import React from "react";
 import { Alert, FlatList, Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
-import { Filme, useFilmes } from "../hooks/globalContext";
-import { styles } from "./style";
+import { Filme, useFilmes } from "../../hooks/globalContext";
+import { styles } from ".././favoritos/style";
 import { Ionicons } from "@expo/vector-icons";
-import image from '../assets/image.png'
-import { useUser } from "../hooks/userContext";
+import image from '../../assets/image.png';
+import { useUser } from "../../hooks/userContext";
 
 export default function Favoritos() {
     const {user}=useUser();
     const { filmes, removerFilmeFavorito } = useFilmes();
 
 
-    const handleRemoverPress = (filme: Filme) => {
+    const handleRemoverPress = (filme) => {
         Alert.alert(
             "Remover dos Favoritos",
             `Deseja remover ${filme.Title} dos favoritos?`,

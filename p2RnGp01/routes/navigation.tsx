@@ -1,13 +1,12 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import cadastroUsuario from '../pages/cadastroUsuario';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Favoritos from '../pages/favoritos';
-import SelecaoFilme from '../pages/selecaoFilme';
+import Favoritos from '../pages/favoritos/favoritos';
+import SelecaoFilme from '../pages/selecaoFilme/selecaoFilme';
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import CadastroUsuario from '../pages/cadastroUsuario';
-import HomeScreen from '../pages';
+import CadastroUsuario from '../pages/cadastroUsuario/cadastroUsuario';
+import HomeScreen from '../pages/index';
 import { FilmesProvider } from '../hooks/globalContext';
 
 const Stack = createStackNavigator();
