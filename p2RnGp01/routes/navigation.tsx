@@ -8,7 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import CadastroUsuario from '../pages/cadastroUsuario/cadastroUsuario';
 import HomeScreen from '../pages/index';
 import { FilmesProvider } from '../hooks/globalContext';
-import HomePage from '../pages/homePage/homePage';
+import HomePage from '../pages/homePage/homePage'; 
 
 const Stack = createStackNavigator();
 
@@ -43,7 +43,7 @@ export function MyTabs() {
   return (
       <Tab.Navigator style={{marginTop: 25}}>
         <Tab.Screen
-          name="HomePage"
+          name="HomePage1"
           component={HomePage}
           options={{
             tabBarLabel: 'Pagina Principal',
