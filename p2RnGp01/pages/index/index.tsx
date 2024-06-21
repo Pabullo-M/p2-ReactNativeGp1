@@ -29,7 +29,7 @@ export default function HomeScreen({ navigation }) {
       });
 
       if (response.status === 200) {
-        Alert.alert('Usuário Logado');
+        
         setUser({
           email: login,
           password: senha

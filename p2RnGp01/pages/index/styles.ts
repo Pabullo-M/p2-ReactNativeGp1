@@ -81,7 +81,8 @@ import { StyleSheet } from "react-native";
     olhoSenha:{
         position: 'absolute',
         right:'17%',
-        paddingBottom:'26%'
+        paddingBottom:'26%',
+        top: 133
     }, 
     bordaOpaca:{
         justifyContent: 'center',

@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
     
     containerPrincipal:{
         flex: 1,
-        zIndex:0
+        zIndex:0,
     },  
     background: {
         justifyContent: "center",
@@ -49,6 +49,26 @@ import { StyleSheet } from "react-native";
         position: 'absolute',
         bottom: 330,
         left: 205,
-    } 
+    },
+    lupaPesquisa: {
+        right: 125,
+        bottom: 55
+    },
+    filmeSelecionado: {
+        color: '#fff',
+        top: 30,
+        fontSize: 20,
+        fontWeight: '500',
+        height: 500
+    },
+    box: {
+        tintColor: '#fff',
+        backgroundColor: '#f00',
+        bottom: 50,
+        alignSelf: 'center',
+       
+
+    }
+
 
 })

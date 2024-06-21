@@ -130,6 +130,19 @@ export const styles = StyleSheet.create({
     containerDescricao: {
         position: 'absolute',        
         top: 0,   
+    },
+    filmesFavoritos: {
+        color: '#fff',
+        top: 30,
+        fontSize: 20,
+        fontWeight: '500',
+        height: 500
+    },
+    boxFavoritos: {
+        tintColor: '#fff',
+        backgroundColor: '#f00',
+        bottom: 50,
+        alignSelf: 'center',
     }
    
     

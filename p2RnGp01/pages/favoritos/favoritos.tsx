@@ -5,6 +5,7 @@ import { styles } from ".././favoritos/style";
 import { Ionicons } from "@expo/vector-icons";
 import image from '../../assets/image.png';
 import { useUser } from "../../hooks/userContext";
+import box from '../../assets/box.png';
 
 export default function Favoritos() {
     const {user}=useUser();
@@ -35,8 +36,10 @@ export default function Favoritos() {
     return (
         <View style={styles.containerPrincipal}>
           <ImageBackground source={image} style={styles.background}>
-            {!filmes.find((filme)=>filme.userEmail == user?.email)?<Text>
+            {!filmes.find((filme)=>filme.userEmail == user?.email)?
+                <Text style={styles.filmesFavoritos}>
                 Lista de Favoritos Vazia
+                <Image  style={styles.boxFavoritos} source={box}/>
                 </Text>:
                     
                     <FlatList

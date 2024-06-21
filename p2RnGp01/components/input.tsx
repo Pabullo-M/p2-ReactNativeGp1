@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 interface props extends TextInputProps{
     value: string
     placeHolder: string
-    icone: any
+    icone?: any
 
 }
 
