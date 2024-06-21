@@ -8,17 +8,27 @@ import { Ionicons } from '@expo/vector-icons';
 import image from '../../assets/image.png'
 import { useUser } from '../../hooks/userContext';
 import CheckBox from '../../components/checkBox';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function HomeScreen({ navigation }) {
  
-  const {setUser} = useUser()
+  const {retrieveData, setUser, setSalvarEmail} = useUser()
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
   const [senhaInvisivel, setSenhaInvisivel] = useState(true);
-
+  const [isChecked, setIsChecked] = useState(true);
   useEffect(()=>{
-    setUser(undefined);
+    const fetchData = async () => {
+      const retrievedEmail = await retrieveData();
+      if (retrievedEmail) {
+        setIsChecked(retrievedEmail)
+        setLogin(retrievedEmail);
+      }
+    };
+
+    fetchData();
+    
   },[])
 
   const postUsuarios = async () => {
@@ -42,6 +52,17 @@ export default function HomeScreen({ navigation }) {
       Alert.alert('Erro ' + error);
     }
   };
+  const limpaEmail = async()=>{
+    await AsyncStorage.clear()
+}
+  const checkbox = ()=>{
+    setIsChecked(!isChecked)
+    setSalvarEmail(!isChecked)
+    if(isChecked){
+      limpaEmail()
+      setLogin('')
+    }
+  } 
 
   return (
     
@@ -64,7 +85,7 @@ export default function HomeScreen({ navigation }) {
         icone="lock-closed"
         secureTextEntry={senhaInvisivel}
       />
-       <CheckBox />
+       <CheckBox onPress={checkbox} isChecked = {isChecked} />
       <TouchableOpacity style={styles.olhoSenha} onPress={() => setSenhaInvisivel(!senhaInvisivel)}>
         <Ionicons size={25} name={senhaInvisivel ? 'eye-off' : 'eye'} />
       </TouchableOpacity>
@@ -85,6 +106,5 @@ export default function HomeScreen({ navigation }) {
       </View>
       </ImageBackground>
    </View>
-  
   );
 }

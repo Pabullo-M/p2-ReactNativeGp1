@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TouchableOpacityProps } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useUser } from '../hooks/userContext';
 
-const CheckBox: React.FC = () => {
-    const [isChecked, setIsChecked] = useState(false);
+interface props extends TouchableOpacityProps{
+    isChecked: boolean
+}
 
-    const toggleCheckbox = () => {
-        setIsChecked(!isChecked);
-    };
+
+const CheckBox: React.FC<props> = ({isChecked, ...rest}) => {
+
+
+
 
     return (
-        <TouchableOpacity style={styles.container} onPress={toggleCheckbox}>
+        <TouchableOpacity style={styles.container}
+             {...rest}>
             <Ionicons 
                 name={isChecked ? 'checkbox-outline' : 'square-outline'}
                 size={24} 
