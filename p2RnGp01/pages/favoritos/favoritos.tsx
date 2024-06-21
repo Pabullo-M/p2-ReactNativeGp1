@@ -6,6 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import image from '../../assets/image.png';
 import { useUser } from "../../hooks/userContext";
 import box from '../../assets/box.png';
+import { BotaoFlutuante } from "../../components/Draggable";
 
 export default function Favoritos() {
     const {user}=useUser();
@@ -36,6 +37,7 @@ export default function Favoritos() {
     return (
         <View style={styles.containerPrincipal}>
           <ImageBackground source={image} style={styles.background}>
+
             {!filmes.find((filme)=>filme.userEmail == user?.email)?
                 <Text style={styles.filmesFavoritos}>
                 Lista de Favoritos Vazia
@@ -45,7 +47,7 @@ export default function Favoritos() {
                     <FlatList
                     data={filmes.filter((filme)=>filme.userEmail == user?.email)}
                     renderItem={({ item }) => (
-                        <> 
+                        
                         <View style={styles.cardFavoritos}>
                             <View style={styles.containerDescricao}>
                                 <Text style= {styles.tituloFilme}>{item.Title}</Text>                       
@@ -68,7 +70,7 @@ export default function Favoritos() {
                                 <Text style={styles.textoBotaoRemover}> Remover dos Favoritos</Text>
                             </TouchableOpacity>
                         </View>
-                        </>
+                    
                         
                     )}
                     keyExtractor={item => item.imdbID}

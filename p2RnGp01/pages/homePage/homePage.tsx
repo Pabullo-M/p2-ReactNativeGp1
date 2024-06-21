@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import VideoBackground from '../../components/videoBg'; 
 import { styles } from './style';
+import { BotaoFlutuante } from '../../components/Draggable';
 const HomePage: React.FC = () => {
     
     const videoSource = require('../../assets/home.mp4');
