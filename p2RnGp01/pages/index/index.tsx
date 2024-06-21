@@ -13,12 +13,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function HomeScreen({ navigation }) {
  
-  const {retrieveData, setUser, setSalvarEmail} = useUser()
+  const {retrieveData, setUser, setSalvarEmail,user} = useUser()
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
   const [senhaInvisivel, setSenhaInvisivel] = useState(true);
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
   useEffect(()=>{
+    if(user){
+      navigation.navigate('HomePage')
+    }
     const fetchData = async () => {
       const retrievedEmail = await retrieveData();
       if (retrievedEmail) {
@@ -60,7 +63,7 @@ export default function HomeScreen({ navigation }) {
     setSalvarEmail(!isChecked)
     if(isChecked){
       limpaEmail()
-      setLogin('')
+      // setLogin('')
     }
   } 
 
