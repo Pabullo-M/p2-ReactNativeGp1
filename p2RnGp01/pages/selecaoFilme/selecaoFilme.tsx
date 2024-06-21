@@ -8,6 +8,7 @@ import { styles } from "./style";
 import image from '../../assets/image.png';
 import { useUser } from "../../hooks/userContext";
 import box from '../../assets/box.png';
+import { BotaoFlutuante } from "../../components/Draggable";
 
 
 
@@ -61,6 +62,7 @@ export default function SelecaoFilme() {
     return(
         <View style={styles.containerPrincipal}>
             <ImageBackground source={image} style={styles.backgroundFavoritos}> 
+              
                 <InputComponente 
                     onChangeText={(titulo)=>{setTitulo(titulo)}}
                     value={titulo}
