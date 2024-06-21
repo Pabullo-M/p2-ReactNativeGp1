@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import VideoBackground from '../../components/videoBg'; 
+import { styles } from './style';
 const HomePage: React.FC = () => {
     
     const videoSource = require('../../assets/home.mp4');
@@ -14,19 +15,6 @@ const HomePage: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    content: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 20,
-        color: 'white',
-    },
-});
+
 
 export default HomePage;
