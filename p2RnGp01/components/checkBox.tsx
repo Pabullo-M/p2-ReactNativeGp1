@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingVertical: 8,
+        marginLeft: 10
     },
     label: {
         color: 'white',
