@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInputProps, View, TextInput } from "react-native";
-import { styles } from "./style";
+import { styles } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 
 interface props extends TextInputProps{

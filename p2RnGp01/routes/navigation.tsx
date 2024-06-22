@@ -9,7 +9,7 @@ import CadastroUsuario from '../pages/cadastroUsuario/cadastroUsuario';
 import HomeScreen from '../pages/index';
 import { FilmesProvider } from '../hooks/globalContext';
 import HomePage from '../pages/homePage/homePage'; 
-import { BotaoFlutuante } from '../components/Draggable';
+import { BotaoFlutuante } from '../components/Draggable/Draggable';
 
 const Stack = createStackNavigator();
 

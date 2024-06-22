@@ -3,12 +3,12 @@ import { View, Text, Image, TouchableOpacity, ImageBackground, Alert } from "rea
 import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
 import { useFilmes } from "../../hooks/globalContext";
-import InputComponente from "../../components/input";
+import InputComponente from "../../components/input/input";
 import { styles } from "./style";
 import image from '../../assets/selecao-filme.png';
 import { useUser } from "../../hooks/userContext";
 import box from '../../assets/box.png';
-import { BotaoFlutuante } from "../../components/Draggable";
+import { BotaoFlutuante } from "../../components/Draggable/Draggable";
 
 
 

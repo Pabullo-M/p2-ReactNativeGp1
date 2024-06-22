@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import VideoBackground from '../../components/videoBg'; 
+import VideoBackground from '../../components/videoBg/videoBg'; 
 import { styles } from './style';
-import { BotaoFlutuante } from '../../components/Draggable';
+import { BotaoFlutuante } from '../../components/Draggable/Draggable';
 const HomePage: React.FC = () => {
     
     const videoSource = require('../../assets/home.mp4');

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TouchableOpacityProps } from 'react-native';
+import { View, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useUser } from '../hooks/userContext';
+import { useUser } from '../../hooks/userContext';
+import { styles } from './styles'
 
 interface props extends TouchableOpacityProps{
     isChecked: boolean
@@ -26,18 +27,5 @@ const CheckBox: React.FC<props> = ({isChecked, ...rest}) => {
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: 8,
-        marginLeft: 10
-    },
-    label: {
-        color: 'white',
-        marginLeft: 8,
-        fontSize: 16,
-    },
-});
 
 export default CheckBox;
