@@ -1,10 +1,10 @@
-import { styles } from "./styles";
+import { styles } from "../index/styles";
 import InputComponente from "../../components/input";
 import ButtonComponente from "../../components/button";
 import axios from "axios";
 import { useState } from "react";
 import { Alert, ImageBackground, View } from "react-native";
-import image from './../../assets/image.png'
+import image from './../../assets/cadastro-login.png'
 
 export default function CadastroUsuario({ navigation }) {
 
@@ -36,27 +36,40 @@ export default function CadastroUsuario({ navigation }) {
     return(
         <View style={styles.containerPrincipal}>
           <ImageBackground source={image} style={styles.background}>
-            <InputComponente
-              onChangeText={(nome: string)=>{setNome(nome)}}
-              value={nome}
-              placeHolder="Digite aqui seu nome"
-              icone='person'
-            />
-            <InputComponente
-              onChangeText={(email:string)=>{setEmail(email)}}
-              value={email}
-              placeHolder="Digite aqui seu e-mail"
-              icone='mail'
-            />
-            <InputComponente
-              onChangeText={(senha: string)=>{setSenha(senha)}}
-              value={senha}
-              placeHolder="Digite aqui sua senha"
-              icone='lock-closed'
-            />
-            <ButtonComponente 
-              onPress={postUsuario}  
-              texto="Cadastrar" />
+            <View style={styles.bordaOpaca}>
+              <InputComponente
+                style={styles.barraLogin}
+                onChangeText={(nome: string)=>{setNome(nome)}}
+                value={nome}
+                placeHolder="Digite aqui seu nome"
+                icone='people'
+              />
+              <InputComponente
+                style={styles.barraLogin}
+                onChangeText={(email:string)=>{setEmail(email)}}
+                value={email}
+                placeHolder="Digite aqui seu e-mail"
+                icone='mail'
+              />
+              <InputComponente
+                style={styles.barraLogin}
+                onChangeText={(senha: string)=>{setSenha(senha)}}
+                value={senha}
+                placeHolder="Digite uma senha"
+                icone='key'
+              />
+              <InputComponente
+                style={styles.barraLogin}
+                onChangeText={(senha: string)=>{setSenha(senha)}}
+                value={senha}
+                placeHolder="Confirme sua senha"
+                icone='key'
+              />
+              <ButtonComponente 
+                style={styles.botaoLogin}
+                onPress={postUsuario}  
+                texto="Cadastrar" />
+            </View>
           </ImageBackground>
         </View>
     )

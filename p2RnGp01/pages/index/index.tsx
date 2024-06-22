@@ -5,7 +5,7 @@ import ButtonComponente from '../../components/button';
 import { styles } from '../../pages/index/styles';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
-import image from '../../assets/image.png'
+import image from '../../assets/cadastro-login.png'
 import { useUser } from '../../hooks/userContext';
 import CheckBox from '../../components/checkBox';
 import AsyncStorage from '@react-native-async-storage/async-storage';

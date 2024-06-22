@@ -3,7 +3,7 @@ import { Alert, FlatList, Image, ImageBackground, Text, TouchableOpacity, View }
 import { Filme, useFilmes } from "../../hooks/globalContext";
 import { styles } from ".././favoritos/style";
 import { Ionicons } from "@expo/vector-icons";
-import image from '../../assets/image.png';
+import image from '../../assets/favoritos.png';
 import { useUser } from "../../hooks/userContext";
 import box from '../../assets/box.png';
 import { BotaoFlutuante } from "../../components/Draggable";

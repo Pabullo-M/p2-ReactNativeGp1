@@ -19,7 +19,7 @@ const CheckBox: React.FC<props> = ({isChecked, ...rest}) => {
             <Ionicons 
                 name={isChecked ? 'checkbox-outline' : 'square-outline'}
                 size={24} 
-                color={isChecked ? 'black' : 'black'}
+                color={isChecked ? 'white' : 'white'}
             />
             <Text style={styles.label}>Salvar E-mail</Text>
         </TouchableOpacity>
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
     },
     label: {
+        color: 'white',
         marginLeft: 8,
         fontSize: 16,
     },

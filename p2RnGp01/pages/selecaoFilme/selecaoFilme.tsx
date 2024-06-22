@@ -5,7 +5,7 @@ import axios from "axios";
 import { useFilmes } from "../../hooks/globalContext";
 import InputComponente from "../../components/input";
 import { styles } from "./style";
-import image from '../../assets/image.png';
+import image from '../../assets/selecao-filme.png';
 import { useUser } from "../../hooks/userContext";
 import box from '../../assets/box.png';
 import { BotaoFlutuante } from "../../components/Draggable";
