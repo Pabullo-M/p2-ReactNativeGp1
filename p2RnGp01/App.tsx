@@ -5,8 +5,8 @@ import { FilmesProvider } from './context/fimesContext';
 import { UserProvider } from './context/userContext';
 import Draggable from 'react-native-draggable';
 import { View } from 'react-native';
-import ButtonComponente from './components/button';
-import { BotaoFlutuante } from './components/Draggable';
+import ButtonComponente from './components/button/button';
+import { BotaoFlutuante } from './components/Draggable/Draggable';
 
 function App() {
   return (

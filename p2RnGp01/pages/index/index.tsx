@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, ImageBackground, Text, TouchableOpacity, View} from 'react-native';
-import InputComponente from '../../components/input';
-import ButtonComponente from '../../components/button';
+import InputComponente from '../../components/input/input';
+import ButtonComponente from '../../components/button/button';
 import { styles } from '../../pages/index/styles';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import image from '../../assets/cadastro-login.png'
 import { useUser } from '../../context/userContext';
-import CheckBox from '../../components/checkBox';
+import CheckBox from '../../components/checkBox/checkBox';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, ImageBackground, Alert, Modal, Text, TouchableOpacity, Switch } from 'react-native';
 import { styles } from './styles';
-import InputComponente from '../../components/input';
-import ButtonComponente from '../../components/button';
+import InputComponente from '../../components/input/input';
+import ButtonComponente from '../../components/button/button';
 import axios from 'axios';
 
 const image = require('../../assets/cadastro-login.png');
