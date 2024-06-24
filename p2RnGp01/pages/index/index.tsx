@@ -66,7 +66,6 @@ export default function HomeScreen({ navigation }) {
     setSalvarEmail(!isChecked)
     if(isChecked){
       limpaEmail()
-      // setLogin('')
     }
   } 
 
