@@ -6,7 +6,7 @@ import { styles } from '../../pages/index/styles';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import image from '../../assets/cadastro-login.png'
-import { useUser } from '../../hooks/userContext';
+import { useUser } from '../../context/userContext';
 import CheckBox from '../../components/checkBox';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

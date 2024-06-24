@@ -1,10 +1,10 @@
 import React from "react";
 import { Alert, FlatList, Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
-import { Filme, useFilmes } from "../../hooks/globalContext";
+import { Filme, useFilmes } from "../../context/fimesContext";
 import { styles } from ".././favoritos/style";
 import { Ionicons } from "@expo/vector-icons";
 import image from '../../assets/favoritos.png';
-import { useUser } from "../../hooks/userContext";
+import { useUser } from "../../context/userContext";
 import box from '../../assets/box.png';
 import { BotaoFlutuante } from "../../components/Draggable";
 

@@ -7,7 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import CadastroUsuario from '../pages/cadastroUsuario/cadastroUsuario';
 import HomeScreen from '../pages/index';
-import { FilmesProvider } from '../hooks/globalContext';
+import { FilmesProvider } from '../context/fimesContext';
 import HomePage from '../pages/homePage/homePage'; 
 import { BotaoFlutuante } from '../components/Draggable';
 
