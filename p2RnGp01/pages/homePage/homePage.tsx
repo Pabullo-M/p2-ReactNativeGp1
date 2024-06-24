@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import VideoBackground from '../../components/videoBg'; 
+import VideoBackground from '../../components/videoBg/videoBg'; 
 import { styles } from './style';
 const HomePage: React.FC = () => {
     

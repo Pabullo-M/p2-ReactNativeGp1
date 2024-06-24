@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Video } from 'expo-av';
 
+
 const VideoBackground: React.FC<{ source: any }> = ({ source }) => {
     return (
             <Video
@@ -18,10 +19,7 @@ const VideoBackground: React.FC<{ source: any }> = ({ source }) => {
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-});
+
+
 
 export default VideoBackground;

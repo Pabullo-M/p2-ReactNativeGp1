@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, ImageBackground, Alert } from "rea
 import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
 import { useFilmes } from "../../context/fimesContext";
-import InputComponente from "../../components/input";
+import InputComponente from "../../components/input/input";
 import { styles } from "./style";
 import image from '../../assets/selecao-filme.png';
 import { useUser } from "../../context/userContext";

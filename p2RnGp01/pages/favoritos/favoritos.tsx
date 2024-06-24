@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import image from '../../assets/favoritos.png';
 import { useUser } from "../../context/userContext";
 import box from '../../assets/box.png';
-import { BotaoFlutuante } from "../../components/Draggable";
+import { BotaoFlutuante } from "../../components/Draggable/Draggable";
 
 export default function Favoritos() {
     const {user}=useUser();
