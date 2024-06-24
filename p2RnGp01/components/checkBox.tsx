@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TouchableOpacityProps } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useUser } from '../hooks/userContext';
+import { useUser } from '../context/userContext';
 
 interface props extends TouchableOpacityProps{
     isChecked: boolean

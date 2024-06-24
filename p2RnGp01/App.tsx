@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MyStack, MyTabs } from './routes/navigation';
-import { FilmesProvider } from './hooks/globalContext';
-import { UserProvider } from './hooks/userContext';
+import { FilmesProvider } from './context/fimesContext';
+import { UserProvider } from './context/userContext';
 import Draggable from 'react-native-draggable';
 import { View } from 'react-native';
 import ButtonComponente from './components/button';
@@ -14,7 +14,6 @@ function App() {
       <FilmesProvider>
         <MyStack/>
       </FilmesProvider>
-      <BotaoFlutuante eixoX={300} eixoY={-150}/>
     </UserProvider>
   );
 }

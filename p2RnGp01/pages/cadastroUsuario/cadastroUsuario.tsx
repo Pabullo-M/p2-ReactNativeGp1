@@ -4,11 +4,10 @@ import { styles } from './styles';
 import InputComponente from '../../components/input';
 import ButtonComponente from '../../components/button';
 import axios from 'axios';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const image = require('../../assets/cadastro-login.png');
 
-const CadastroUsuario = ({ navigation }) => {
+const CadastroUsuario = ({ navigation }: any) => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
