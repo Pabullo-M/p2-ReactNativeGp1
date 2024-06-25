@@ -1,16 +1,16 @@
 import React from "react";
 import { Alert, FlatList, Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
-import { Filme, useFilmes } from "../../context/fimesContext";
+import { Filme, useFilmesContext } from "../../context/fimesContext";
 import { styles } from ".././favoritos/style";
 import { Ionicons } from "@expo/vector-icons";
 import image from '../../assets/favoritos.png';
 import { useUserContext } from "../../context/userContext";
 import box from '../../assets/box.png';
-import { BotaoFlutuante } from "../../components/Draggable/Draggable";
+
 
 export default function Favoritos() {
     const {user}=useUserContext();
-    const { filmes, removerFilmeFavorito } = useFilmes();
+    const { filmes, removerFilmeFavorito } = useFilmesContext();
 
 
     const handleRemoverPress = (filme:Filme) => {
