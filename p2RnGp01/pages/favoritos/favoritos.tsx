@@ -4,12 +4,12 @@ import { Filme, useFilmes } from "../../context/fimesContext";
 import { styles } from ".././favoritos/style";
 import { Ionicons } from "@expo/vector-icons";
 import image from '../../assets/favoritos.png';
-import { useUser } from "../../context/userContext";
+import { useUserContext } from "../../context/userContext";
 import box from '../../assets/box.png';
 import { BotaoFlutuante } from "../../components/Draggable/Draggable";
 
 export default function Favoritos() {
-    const {user}=useUser();
+    const {user}=useUserContext();
     const { filmes, removerFilmeFavorito } = useFilmes();
 
 

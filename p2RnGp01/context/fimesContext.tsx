@@ -20,7 +20,7 @@ type FilmesContextType = {
 
 const FilmesContext = createContext<FilmesContextType | undefined>(undefined);
 
-export const useFilmes = () => {
+export const useFilmesContext = () => {
     const context = useContext(FilmesContext);
     if (!context) {
         throw new Error('useFilmes must be used within a FilmesProvider');

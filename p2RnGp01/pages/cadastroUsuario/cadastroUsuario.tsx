@@ -12,7 +12,6 @@ const CadastroUsuario = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
-  const [mostrarSenhas, setMostrarSenhas] = useState(false);
   const [aceitouTermos, setAceitouTermos] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -108,6 +107,7 @@ const CadastroUsuario = ({ navigation }: any) => {
             value={senha}
             placeHolder="Digite aqui sua senha"
             icone='key'
+            secureTextEntry={true}
           />
         </View>
         <View style={styles.inputContainer}>
@@ -117,6 +117,7 @@ const CadastroUsuario = ({ navigation }: any) => {
             value={confirmarSenha}
             placeHolder="Confirme sua senha"
             icone='key'
+            secureTextEntry={true}
           />
         </View>
         <View style={styles.checkboxContainer}>

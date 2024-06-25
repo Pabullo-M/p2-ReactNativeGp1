@@ -6,14 +6,14 @@ import { styles } from '../../pages/index/styles';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import image from '../../assets/cadastro-login.png'
-import { useUser } from '../../context/userContext';
+import { useUserContext } from '../../context/userContext';
 import CheckBox from '../../components/checkBox/checkBox';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function HomeScreen({ navigation }) {
  
-  const {retrieveData, setUser, setSalvarEmail,user} = useUser()
+  const {retrieveData, setUser, setSalvarEmail,user} = useUserContext()
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
   const [senhaInvisivel, setSenhaInvisivel] = useState(true);

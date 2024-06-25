@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Image, TouchableOpacity, ImageBackground, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
-import { useFilmes } from "../../context/fimesContext";
+import { useFilmesContext } from "../../context/fimesContext";
 import InputComponente from "../../components/input/input";
 import { styles } from "./style";
 import image from '../../assets/selecao-filme.png';
-import { useUser } from "../../context/userContext";
+import { useUserContext } from "../../context/userContext";
 import box from '../../assets/box.png';
 
 
@@ -22,8 +22,8 @@ interface Filme {
 }
 
 export default function SelecaoFilme() {
-  const {user} = useUser();
-  const {filmes, setFilmes } = useFilmes();
+  const {user} = useUserContext();
+  const {filmes, setFilmes } = useFilmesContext();
   const [filme, setFilme] = useState<Filme | null>(null);
   const [titulo, setTitulo] = useState('');
 
