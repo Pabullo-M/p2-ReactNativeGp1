@@ -35,6 +35,10 @@ export default function HomeScreen({ navigation }) {
   },[])
 
   const postUsuarios = async () => {
+    if(!login||!senha){
+      Alert.alert("Os campos devem ser preenchidos")
+      return;
+    }
     try {
       const response = await axios.post('https://serverest.dev/login', {
         email: login,
@@ -50,9 +54,8 @@ export default function HomeScreen({ navigation }) {
         navigation.navigate('HomePage')
         
       }
-    } catch (error) {
-      console.log(error);
-      Alert.alert('Erro ' + error);
+    } catch (error: any) {
+      Alert.alert('Erro ' + error.response.data.message);
     }
   };
   const limpaEmail = async()=>{
@@ -63,7 +66,6 @@ export default function HomeScreen({ navigation }) {
     setSalvarEmail(!isChecked)
     if(isChecked){
       limpaEmail()
-      // setLogin('')
     }
   } 
 
